@@ -1,4 +1,10 @@
+GET http://localhost:8001/
+
+### 
 GET http://localhost:8001/about
 
 ###
+
+GET http://localhost:8001/tickets
+
 

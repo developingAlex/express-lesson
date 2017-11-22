@@ -11,7 +11,7 @@ server.get('/', (req, res) => {
 server.get('/about', (req, res) => {
   res.json({ message: 'This is about' })
 })
-server.use('/', ticketsRouter)
+server.use('/', ticketsRouter) //the '/' part just declares that there is not going to be a prefix to the routes mentioned by ticketsRouter...
 
 server.listen(8001, () => {
   console.log('Startd at http://localhost:8001');
