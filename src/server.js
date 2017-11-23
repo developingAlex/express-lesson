@@ -13,7 +13,8 @@ server.get('/about', (req, res) => {
 })
 server.use('/', [
   require('./routes/tickets'), 
-  require('./routes/animals')
+  require('./routes/animals'),
+  require('./routes/seacritters')
 ]) //the '/' part just declares that there is not going to be a prefix to the routes mentioned by ticketsRouter...
 //we don't need to mention ./routes/tickets.js because express expects it to be .js, it's implied.
 server.listen(8001, () => {
