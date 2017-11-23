@@ -64,6 +64,12 @@ function destroy(id){
   animals = newAnimals
 }
 
+function update(id, attributes){
+  id = parseInt(id, 10)
+  animalToUpdate = find(id)
+  Object.assign(animalToUpdate, attributes)
+}
+
 function all(){
   return animals
 }
@@ -72,5 +78,6 @@ module.exports = {
   all,
   find,
   create,
-  destroy
+  destroy,
+  update
 }

@@ -26,7 +26,20 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8001/animals/2
+DELETE http://localhost:8001/animals/5
+
+###
+
+PATCH http://localhost:8001/animals/4
+Content-Type: application/json
+
+{
+  "name": "Giraffe",
+  "count" : 10
+}
+
+
+###
 
 
 

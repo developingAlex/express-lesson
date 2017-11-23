@@ -35,9 +35,31 @@ router.post('/animals', (req, res) => {
 router.delete('/animals/:id', (req, res) => {
   
   const id = req.params['id']
-  Animal.destroy(id)
+  destroyedAnimal = Animal.find(id)
+  if (destroyedAnimal){
 
-  res.json({"response":"deleted"}) // the response is necessary for it to work properly
+    Animal.destroy(id)
+    
+    res.status(200).json(destroyedAnimal) // the response is necessary for it to work properly
+  }
+  else{
+
+    res.status(404) //status is the express way of writeHead (which doesn't work in this case "Error: Can't set headers after they are sent.")
+    res.json({"message":`no animal found with id ${id}`})
+  }
 })
 
+router.patch('/animals/:id', (req, res) =>{
+  const id = req.params['id']
+  updatedAnimal = Animal.find(id)
+  if (updatedAnimal !== null){
+
+    Animal.update(id, req.body)
+    res.json(updatedAnimal)
+  }
+  else{
+    res.status(404) //status is the express way of writeHead (which doesn't work in this case "Error: Can't set headers after they are sent.")
+    res.json({"message":`no animal found with id ${id}`})
+  }
+})
 module.exports = router // to allow this to be used externally by the other files.
