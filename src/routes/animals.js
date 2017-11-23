@@ -14,7 +14,7 @@ router.get('/animals/:id', (req, res) => {
     res.json(animal)
   }
   else{
-    res.status(404)
+    res.status(404) //status is the express way of writeHead (which doesn't work in this case "Error: Can't set headers after they are sent.")
     res.json({"message":`no animal found with id ${id}`})
   }
 })
