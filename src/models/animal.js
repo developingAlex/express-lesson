@@ -78,11 +78,28 @@ function all(){
   return animals
 }
 
+function sort(){
+  animals.sort(nameCompare);
+  console.log("sort function did run")
+}
 
+function nameCompare(a,b){
+  if (a.name < b.name){
+    return -1
+  }
+  else if(a.name > b.name){
+    return 1
+  }
+  else{
+    return 0
+  }
+
+}
 module.exports = {
   all,
   find,
   create,
   destroy,
-  update
+  update,
+  sort
 }

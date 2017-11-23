@@ -1,9 +1,14 @@
 const express = require('express')
-
+const queryString = require('querystring')
 const Animal = require('../models/animal')
 const router = express.Router()
 
 router.get('/animals', (req,res) => {
+  res.json(Animal.all())
+})
+
+router.get('/animals/sort', (req,res) => {
+  Animal.sort()
   res.json(Animal.all())
 })
 
