@@ -93,13 +93,24 @@ function nameCompare(a,b){
   else{
     return 0
   }
-
 }
+
+function search(query){
+  matchingAnimals = []
+  animals.forEach(animal => {
+    if (animal.name.includes(query)){
+      matchingAnimals.push(animal)
+    }
+  });
+  return matchingAnimals
+}
+
 module.exports = {
   all,
   find,
   create,
   destroy,
   update,
-  sort
+  sort,
+  search
 }

@@ -4,7 +4,14 @@ const Animal = require('../models/animal')
 const router = express.Router()
 
 router.get('/animals', (req,res) => {
-  res.json(Animal.all())
+  if (req.query.q){
+    searchKey = req.query.q
+    res.json(Animal.search(searchKey))
+  }
+  else{
+
+    res.json(Animal.all())
+  }
 })
 
 router.get('/animals/sort', (req,res) => {
