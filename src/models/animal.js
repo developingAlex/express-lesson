@@ -52,6 +52,17 @@ function create(attributes){
   return newAnimal
 }
 
+function destroy(id){
+  id = parseInt(id, 10)
+  //iterate through the animals array and make a copy of it but leave out the one that is referred to by id.
+  let newAnimals = []
+  animals.forEach(animal => {
+    if (animal.id !== id){
+      newAnimals.push(animal)
+    }
+  });
+  animals = newAnimals
+}
 
 function all(){
   return animals
@@ -60,5 +71,6 @@ function all(){
 module.exports = {
   all,
   find,
-  create
+  create,
+  destroy
 }

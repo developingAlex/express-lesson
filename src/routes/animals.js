@@ -32,4 +32,12 @@ router.post('/animals', (req, res) => {
   res.json(newAnimal)
 })
 
+router.delete('/animals/:id', (req, res) => {
+  
+  const id = req.params['id']
+  Animal.destroy(id)
+
+  res.json({"response":"deleted"}) // the response is necessary for it to work properly
+})
+
 module.exports = router // to allow this to be used externally by the other files.

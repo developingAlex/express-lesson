@@ -24,3 +24,9 @@ Content-Type: application/json
 }
 
 
+###
+
+DELETE http://localhost:8001/animals/2
+
+
+
