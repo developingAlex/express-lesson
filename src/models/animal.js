@@ -26,6 +26,9 @@ let animals = [
     count: 0
   },
 ]
+
+let nextId = 6
+
 function find(id){
   id = parseInt(id, 10) //the 10 means base 10: decimal
   let foundAnimal = null
@@ -38,11 +41,24 @@ function find(id){
   return foundAnimal
 }
 
+function create(attributes){
+  //create the new animal
+  const newAnimal = Object.assign({}, attributes, {id: nextId}) //object.assign means the first argument is the starting object, in our case empty of attributes, then what follows is the objects whose attributes you want to add to the first argument object.
+  //increment the id counter
+  nextId += 1
+  //add the animal to our 'zoo'
+  animals.push(newAnimal)
+  //send back the newly created animal
+  return newAnimal
+}
+
+
 function all(){
   return animals
 }
 
 module.exports = {
   all,
-  find
+  find,
+  create
 }
