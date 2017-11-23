@@ -11,3 +11,11 @@
 * Added a create method to the Animal model and a post path
 * Added the post parsing Node.js 'body-parser' middleware with `yarn add body-parser` 
 * then add it in with `const bodyParser = require('body-parser')`
+
+## things learned
+
+* how to parse querys when sent through in the url, for example
+  git commit: ba969d502a392377dad6bd5ce0919c21dd3b2304
+  ```
+  http://localhost:8001/animals?q=Giraffe
+  ```
