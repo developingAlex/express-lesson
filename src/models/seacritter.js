@@ -19,10 +19,14 @@ let critters = [
     id: 5,
     name: 'Lion fish',
     count: 23
+  },{
+    id: 6,
+    name: 'Blue Ringed Octopus',
+    count: 2
   }
 ]
 
-let nextId = 6
+let nextId = 7
 
 function all(){
   return critters;
@@ -55,10 +59,21 @@ function destroy(critterId){
   return foundCritter
 }
 
-// function update
+function update(id, attributes){
+  id = parseInt(id, 10)
+  critterToUpdate = find(id)
+  if (critterToUpdate){
+    Object.assign(critterToUpdate, attributes)
+  }
+  return critterToUpdate
+
+}
+
+
 module.exports = {
   all,
   find,
   create,
-  destroy
+  destroy,
+  update
 }

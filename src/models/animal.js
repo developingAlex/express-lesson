@@ -24,10 +24,14 @@ let animals = [
     id: 5,
     name: 'Tasmanian Tiger',
     count: 0
-  },
+  },{
+    id: 6,
+    name: 'Paper Wasp',
+    count: 6482
+  }
 ]
 
-let nextId = 6
+let nextId = 7
 
 function find(id){
   id = parseInt(id, 10) //the 10 means base 10: decimal
@@ -73,6 +77,7 @@ function update(id, attributes){
 function all(){
   return animals
 }
+
 
 module.exports = {
   all,

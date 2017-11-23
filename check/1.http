@@ -55,5 +55,10 @@ DELETE http://localhost:8001/seacritters/5
 
 ###
 
+PATCH http://localhost:8001/seacritters/1
+Content-Type: application/json
 
+{
+  "count" : 5
+}
 

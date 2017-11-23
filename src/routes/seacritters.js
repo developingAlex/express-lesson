@@ -38,5 +38,17 @@ router.delete('/seacritters/:id', (req, res) => {
   }
 })
 
+router.patch('/seacritters/:id', (req, res) => {
+  critterId = req.params['id']
+  critterToUpdate = Critter.find(critterId)
+  if (critterToUpdate){
+    Critter.update(critterId, req.body)
+    res.status(200).json(critterToUpdate)
+  }
+  else{
+    res.status(404).json({"Message":`couldn't find any critter with the id ${critterId}`})
+  }
+})
+
 
 module.exports = router
