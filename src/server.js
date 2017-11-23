@@ -1,6 +1,9 @@
 const express = require('express')
-
+const bodyParser = require('body-parser')
 const server = express()
+
+
+server.use(bodyParser.json()) //placed before our routes because it will be parsed before our routes, so the request will already be parsed before we deal with it in our routes.
 
 server.get('/', (req, res) => {
   res.json({ message: 'This is home' })

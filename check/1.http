@@ -12,3 +12,15 @@ GET http://localhost:8001/tickets
 GET http://localhost:8001/animals/44
 
 
+
+###
+
+POST http://localhost:8001/animals
+Content-Type: application/json
+
+{
+  "name": "Lion",
+  "count" : 94
+}
+
+
